@@ -9,6 +9,8 @@ export default function Avatar({ url }) {
     <img
       src={url ?? defaultAvatarUrl}
       alt="User avatar"
+      width="100"
+      height="100"
       className={css.avatar}
     />
   );
