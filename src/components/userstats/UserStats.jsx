@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import { numberWithCommas } from 'utils';
 import css from './UserStats.module.css';
+import { UserStatsPropTypes } from './UserStats.types';
 
 export default function UserStats({ followers, views, likes }) {
   return (
@@ -21,8 +21,4 @@ export default function UserStats({ followers, views, likes }) {
   );
 }
 
-UserStats.propTypes = {
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
-};
+UserStats.propTypes = UserStatsPropTypes;
