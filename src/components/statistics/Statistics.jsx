@@ -1,11 +1,21 @@
 import Box from 'components/Box/Box.styled';
-import PropTypes from 'prop-types';
-import { List, StatisticItem } from './Statistics.styled';
+import { List, StatisticItem, StatisticTitle } from './Statistics.styled';
+import { StatisticsPropTypes } from './Statitstics.types';
 
 export default function Statistics({ title, stats }) {
   return (
-    <Box as="section">
-      {title && <h2>Upload stats</h2>}
+    <Box
+      as="section"
+      boxShadow="box"
+      display="flex"
+      flexDirection="column"
+      width="fit-content"
+      bg="white"
+      my={3}
+      borderRadius="small"
+      overflow="hidden"
+    >
+      {title && <StatisticTitle>Upload stats</StatisticTitle>}
 
       <List>
         {stats.map(({ id, label, percentage }) => (
@@ -19,13 +29,4 @@ export default function Statistics({ title, stats }) {
   );
 }
 
-Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
-    }).isRequired
-  ),
-};
+Statistics.propTypes = StatisticsPropTypes;
