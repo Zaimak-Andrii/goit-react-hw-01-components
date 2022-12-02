@@ -6,7 +6,13 @@ export const theme = {
     grey: 'grey',
     online: 'green',
     offline: 'red',
+    tableHeader: '#52d1eb',
+    tableCellOdd: '#f2f0f0',
+    tableCellEven: '#e3e7e8',
     random: getRandomHexColor,
+  },
+  borders: {
+    tableCell: '1px solid grey',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   radii: {
